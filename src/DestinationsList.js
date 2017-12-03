@@ -6,8 +6,8 @@ export default class DestinationsList extends Component {
         return (
             <ul>
                 {
-                    this.props.destinations.map((el) =>
-                        <li>{el.title}</li>
+                    this.props.destinations.map((el, index) =>
+                        <li key={index} data-category={el.category}>{el.title}</li>
                     )
                 }
             </ul>
