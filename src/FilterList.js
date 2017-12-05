@@ -2,23 +2,21 @@ import React, { Component } from 'react';
 
 
 export default class FilterList extends Component {
-
-
+    
     render() {
         return (
-            <form>
-               
+               <fieldset>
+                    <legend>{this.props.name}</legend>
                     {
+                        
                         this.props.filters.map((el, index) =>
-                        <fieldset>
-                            <legend>{el.name}</legend>
-                            <input type="checkbox" key={index} name="filter" id={el.name} value={el.name} />
-                            <label>{el.name}</label>
-                            <legend>{el.name}</legend>
-                        </fieldset>
+                        <div>
+                            <input type="checkbox" key={index} name="filter" id={el} value={el} />
+                            <label>{el}</label>
+                        </div>
                         )
                     }
-            </form>
+                </fieldset>
         )
     }
 

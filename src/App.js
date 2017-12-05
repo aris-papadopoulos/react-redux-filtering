@@ -51,15 +51,20 @@ const filters = [{
 }
 ]
 
-let res = [];
+let sport = [];
+let locationType = [];
 
 filters.forEach( (el) => {
   if (el.type==='sport') {
-    res.push(el.name);
+    sport.push(el.name);
+  }
+  else if (el.type==='location-type') {
+    locationType.push(el.name);
   }
 
 })
-console.log('res', res);
+console.log('sport', sport);
+console.log('locationType', locationType);
 
 class App extends Component {
   render() {
@@ -69,8 +74,13 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <FilterList filters={filters} />
-        <DestinationsList destinations={destinations} />
+        <main>
+          <form className="filters">
+            <FilterList filters={sport} name="Sport" />
+            <FilterList filters={locationType} name="Location Type" />
+          </form>
+          <DestinationsList destinations={destinations} />
+        </main>
       </div>
     );
   }
