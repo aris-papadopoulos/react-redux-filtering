@@ -1,6 +1,6 @@
 export default function() {
     return [{
-        title: 'golf island',
+        title: 'gggolf island',
         category: 'golf island'
       }, {
         title: 'ice-hockey city',

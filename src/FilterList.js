@@ -10,7 +10,7 @@ export default class FilterList extends Component {
                     {
                         
                         this.props.filters.map((el, index) =>
-                        <div>
+                        <div key={index}>
                             <input type="checkbox" key={index} name="filter" id={el} value={el} />
                             <label>{el}</label>
                         </div>

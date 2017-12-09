@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
 
-export default class DestinationsList extends Component {
+class DestinationsList extends Component {
     render() {
         return (
             <ul>
@@ -15,3 +17,11 @@ export default class DestinationsList extends Component {
     }
 
 }
+
+function mapStatetoProps(state) {
+    return {
+        destinations: state.destinations
+    };
+}
+
+export default connect(mapStatetoProps)(DestinationsList);
