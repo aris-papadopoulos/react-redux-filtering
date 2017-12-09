@@ -9,7 +9,7 @@ class DestinationsList extends Component {
             <ul>
                 {
                     this.props.destinations.map((el, index) =>
-                        <li key={index} data-category={el.category}>{el.title}</li>
+                        <li key={index} data-category={el.category} className={el.cls}>{el.title}</li>
                     )
                 }
             </ul>
