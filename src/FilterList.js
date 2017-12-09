@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
+import {filterChange} from './actions';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
 
-export default class FilterList extends Component {
+class FilterList extends Component {
     
     createFilters(){
 
         return this.props.filters.map((el, index) =>
             <div key={index}>
-                <input type="checkbox" key={index} name="filter" id={el} value={el} />
+                <input 
+                    type="checkbox" 
+                    key={index} 
+                    onClick={() => this.props.filterChange(el)} 
+                    name="filter" 
+                    id={el} 
+                    value={el} />
                 <label>{el}</label>
             </div>
         )
@@ -26,4 +35,12 @@ export default class FilterList extends Component {
         )
     }
 
+
 }
+
+
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({filterChange: filterChange}, dispatch)
+}
+
+export default connect(null, matchDispatchToProps)(FilterList);
