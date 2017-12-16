@@ -38,17 +38,13 @@ filters.forEach( (el) => {
   }
 
 })
-console.log('sport', sport);
-console.log('locationType', locationType);
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+       
         <main>
           <form className="filters">
             <FilterList filters={sport} name="Sport" />
