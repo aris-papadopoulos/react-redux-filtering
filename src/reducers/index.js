@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
-import destinationReducer from './reducer-destinations';
+import destinations from './reducer-destinations';
+import active_filters from './reducer-active-filters';
 
 const allReducers = combineReducers({
-    destinations : destinationReducer
+    active_filters,
+    destinations
 });
 
 export default allReducers;
