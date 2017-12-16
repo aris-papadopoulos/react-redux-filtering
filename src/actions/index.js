@@ -1,9 +1,6 @@
-export const filterChange = (filterName, e) => {
+export const filterChange = (filterName) => {
     return {
         type: 'FILTER_CHANGE',
-        payload: {
-            filterName: filterName,
-            checked: e.target.checked
-        }
+        payload: filterName
     }
 }

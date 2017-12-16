@@ -10,12 +10,12 @@ class FilterList extends Component {
 
         return this.props.filters.map((el, index) =>
             <div key={index}>
-                <input
-                    type="checkbox"
-                    key={index}
-                    onChange={(e) => this.props.filterChange(el, e)}
-                    name="filter"
-                    id={el}
+                <input 
+                    type="checkbox" 
+                    key={index} 
+                    onClick={() => this.props.filterChange(el)} 
+                    name="filter" 
+                    id={el} 
                     value={el} />
                 <label>{el}</label>
             </div>
