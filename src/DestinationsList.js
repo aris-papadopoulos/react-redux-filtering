@@ -19,16 +19,13 @@ class DestinationsList extends Component {
 }
 
 function getFilteredDestinations (destinations, filters) {
-    var filter_set = new Set(filters);
     return destinations.map(function (el) {
-        let category_set = new Set(el.category.split(' '));
-        let intersection = new Set([...filter_set].filter(x => category_set.has(x)));
-        if ([...intersection].length > 0)  {
-            el.cls = 'active'
-        } else {
-            el.cls = 'inactive';
-        }
-        return el
+        let itemCategories = el.category.split(' ');
+        let isActive = filters.every(function(filter)  {
+            return itemCategories.includes(filter);
+        });
+        el.cls = isActive? 'active':'inactive';
+        return el;
     })
 }
 
